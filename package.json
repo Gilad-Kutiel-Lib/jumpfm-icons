@@ -1,7 +1,7 @@
 {
   "name": "jumpfm-icons",
   "version": "1.0.0",
-  "description": "",
+  "description": "Icons for [JumpFm](](http://jumpfm.org/))",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,15 @@
   "devDependencies": {
     "@types/node": "^8.0.25",
     "jumpfm-api": "^1.0.0"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JumpFm/jumpfm-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JumpFm/jumpfm-icons/issues"
+  },
+  "homepage": "https://github.com/JumpFm/jumpfm-icons#readme",
+  "keywords": []
 }
