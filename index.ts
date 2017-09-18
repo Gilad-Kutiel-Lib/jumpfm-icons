@@ -9,12 +9,17 @@ Object.keys(exts).forEach(icon => {
 })
 
 const getIcon = (item: Item) => {
-    const icon = icons[path.extname(item.name).substr(1)]
-    if (icon) return `file_type_${icon}.svg`
+    try {
+        const icon = icons[path.extname(item.name).substr(1)]
+        if (icon) return `file_type_${icon}.svg`
 
-    return item.isDirectory()
-        ? 'default_folder.svg'
-        : 'default_file.svg'
+        return item.isDirectory()
+            ? 'default_folder.svg'
+            : 'default_file.svg'
+    } catch (e) {
+        console.log(e)
+        return 'default_file.svg'
+    }
 }
 
 export const load = (jumpFm: JumpFm) => {
