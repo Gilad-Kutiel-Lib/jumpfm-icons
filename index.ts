@@ -1,6 +1,5 @@
 import { JumpFm, Item } from 'jumpfm-api'
 
-import * as fs from 'fs'
 import * as path from 'path'
 
 const icons = {}
@@ -12,14 +11,13 @@ Object.keys(exts).forEach(icon => {
 const getIcon = (item: Item) => {
     const icon = icons[path.extname(item.name).substr(1)]
     if (icon) return `file_type_${icon}.svg`
-    return fs.statSync(item.path).isDirectory()
+
+    return item.isDirectory()
         ? 'default_folder.svg'
         : 'default_file.svg'
 }
 
 export const load = (jumpFm: JumpFm) => {
-
-
     jumpFm.panels.forEach(panel => {
         panel.onItemsAdded(newItems => {
             newItems.forEach(item => {
